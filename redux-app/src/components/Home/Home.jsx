@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getRandomKitty } from '../actions/actions';
+import { getRandomKitty } from '../../actions/actions';
 
 const Home = () => {
   const kittyUrl = useSelector(state => state.homeKitty);

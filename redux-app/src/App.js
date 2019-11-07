@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 
-import Home from './components/Home';
-import RandomKitty from './components/RandomKitty';
+import Home from './components/Home/Home';
+import RandomKitty from './components/Random/RandomKitty';
 
 import './scss/app.scss';
 
