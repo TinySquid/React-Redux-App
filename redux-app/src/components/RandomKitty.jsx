@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getRandomKitty } from '../actions/actions';
 
 const RandomKitty = props => {
+  const [shouldRefresh, setshouldRefresh] = useState(false);
   const kittyUrl = useSelector(state => state.randomKitty);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getRandomKitty());
-  }, []);
+  }, [shouldRefresh, dispatch]);
 
   return (
-    <div>
-      <img src={kittyUrl} alt="Random kitty that you cant see because the image is broken :(" />
+    <div className="random-cat">
+      <h1>Random Cat Pic</h1>
+      <img src={kittyUrl} alt="Missing cat" />
+      <button onClick={() => setshouldRefresh(!shouldRefresh)}>Another One</button>
     </div>
   )
 }
