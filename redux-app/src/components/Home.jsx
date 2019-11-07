@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getRandomKitty } from '../actions/actions';
 
 const Home = () => {
-  const kittyUrl = useSelector(state => state.randomKitty);
+  const kittyUrl = useSelector(state => state.homeKitty);
   const dispatch = useDispatch();
 
   useEffect(() => {

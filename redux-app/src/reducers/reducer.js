@@ -1,6 +1,7 @@
 import * as ACTIONS from '../actions/actions';
 
 const initialState = {
+  homeKitty: 'https://cdn2.thecatapi.com/images/3qp.gif',
   randomKitty: ''
 };
 
