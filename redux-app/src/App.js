@@ -1,11 +1,18 @@
 import React from 'react';
+import { Route, NavLink } from 'react-router-dom';
 
-import './app.scss';
+import NavBar from './components/NavBar';
 
-function App() {
+import './scss/app.scss';
+
+const App = () => {
   return (
     <div className="app">
-      <p>Hello World</p>
+      <NavBar />
+      {/* <NavLink to="/randomkitty">Random Cat</NavLink> */}
+
+
+      {/* <Route path="/" /> */}
     </div>
   );
 }
