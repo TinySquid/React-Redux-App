@@ -31,3 +31,10 @@ h1 {
       max-height: 500px;
     }
 }
+
+.card-container {
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-around;
+}

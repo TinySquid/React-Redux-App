@@ -1,9 +1,12 @@
-.cat-card {
-  max-width: 50%;
-  margin: 0 auto;
+.card {
+  width: 30%;
+  margin: 2rem;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.658);
 
+  display: flex;
+
   img {
+    max-height: 400px;
     width: 100%;
   }
 }

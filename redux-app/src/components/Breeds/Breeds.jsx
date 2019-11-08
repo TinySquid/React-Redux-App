@@ -6,24 +6,19 @@ import Card from '../Card';
 
 const Breeds = () => {
   const catBreeds = useSelector(state => state.breeds);
-  const cat = useSelector(state => state.currentCat);
+  const cats = useSelector(state => state.cats);
   const catBreedId = useSelector(state => state.currentId);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (catBreeds.length === 0) {
       dispatch(getBreeds());
-      getCat();
-
+      dispatch(getCatByBreedId(catBreedId));
     }
-  }, [dispatch, catBreeds]);
+  }, [dispatch, catBreeds, catBreedId]);
 
   const handleChange = e => {
     dispatch(setBreedId(e.target.value));
-    getCat();
-  }
-
-  const getCat = () => {
     dispatch(getCatByBreedId(catBreedId));
   }
 
@@ -36,11 +31,13 @@ const Breeds = () => {
             <option key={idx} value={breed.id}>{breed.name}</option>
           ))}
         </select>
-        <button onClick={getCat}>Another One</button>
+        <button onClick={() => dispatch(getCatByBreedId(catBreedId))}>Send More Kitties</button>
       </div>
-
-      <Card catUrl={cat.url} />
-
+      <div className="card-container">
+        {cats.map((cat, idx) => (
+          <Card key={idx} catUrl={cat.url} />
+        ))}
+      </div>
     </>
   )
 }
