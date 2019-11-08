@@ -6,6 +6,8 @@ const initialState = {
   currentId: '',
   currentCat: {},
   breeds: [],
+  error: '',
+  isFetching: false
 };
 
 export const reducer = (state = initialState, action) => {
@@ -15,20 +17,48 @@ export const reducer = (state = initialState, action) => {
         ...state,
         randomKitty: action.payload
       }
-    case ACTIONS.GET_BREEDS:
-      return {
-        ...state,
-        breeds: action.payload
-      }
     case ACTIONS.SET_BREED_ID:
       return {
         ...state,
         currentId: action.payload
       }
-    case ACTIONS.GET_CAT_BY_BREED_ID:
+    case ACTIONS.FETCH_BREEDS_START:
       return {
         ...state,
-        currentCat: action.payload
+        isFetching: true,
+        error: ''
+      }
+    case ACTIONS.FETCH_BREEDS_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        breeds: action.payload,
+        error: ''
+      }
+    case ACTIONS.FETCH_BREEDS_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      }
+    case ACTIONS.FETCH_CAT_BY_BREED_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ''
+      }
+    case ACTIONS.FETCH_CAT_BY_BREED_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        currentCat: action.payload[0],
+        error: ''
+      }
+    case ACTIONS.FETCH_CAT_BY_BREED_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
       }
     default:
       return state;
