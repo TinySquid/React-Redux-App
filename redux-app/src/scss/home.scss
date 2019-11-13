@@ -1,0 +1,23 @@
+.home {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 70%;
+  box-shadow: 0 0 5px 1px gray;
+
+  display: flex;
+  justify-content: space-around;
+
+  .content {
+    width: 60%;
+  }
+
+  p {
+    margin: 1%;
+  }
+  
+  img {
+    width: 45%;
+    height: 400px;
+    padding: 2%;
+  }
+}

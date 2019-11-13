@@ -1,0 +1,40 @@
+@import './resets/normalize.scss';
+@import './resets/reset.scss';
+@import './resets/typography.scss';
+
+@import './button.scss';
+@import './card.scss';
+
+@import './Nav.scss';
+@import './home.scss';
+@import './breeds.scss';
+
+.app {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.4rem;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.random-cat {
+    margin: 5rem auto;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.479);
+    max-width: 30%;
+
+    img {
+      width: 100%;
+      max-height: 500px;
+    }
+}
+
+.card-container {
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-around;
+}
